@@ -7,7 +7,7 @@ const MealCategories = () => {
     return (
         <div>
             <h2 className="text-4xl">All Meal Categories:</h2>
-            <div className="grid grid-cols-3 gap-4 my-4">
+            <div className="grid grid-cols-3 gap-8 my-4">
                 {
                     all_categories.map(category => <Category key={category.idCategory} categoryData={category}></Category>)
                 }
