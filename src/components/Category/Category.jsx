@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Category = ({categoryData}) => {
     const {idCategory: id, strCategory: name, strCategoryDescription: description, strCategoryThumb: image} = categoryData;
