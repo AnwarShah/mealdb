@@ -1,5 +1,4 @@
 import './App.css'
-import MealCategories from './components/MealCategories/MealCategories'
 import Navbar from './components/Navbar/Navbar'
 
 function App() {
