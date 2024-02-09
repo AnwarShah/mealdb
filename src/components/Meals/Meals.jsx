@@ -5,7 +5,7 @@ const Meals = () => {
     console.log(all_meals)
     return (
         <div>
-            <h3 className="text-3xl">All Meals: all_meals.length</h3>
+            <h3 className="text-3xl">All Meals: {all_meals}</h3>
         </div>
     );
 };

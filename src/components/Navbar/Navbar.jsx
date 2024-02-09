@@ -5,6 +5,7 @@ const Navbar = () => {
         <div>
             <ul>
                 <li><Link to="/categories/">Categories</Link></li>
+                <li><Link to="/random">Random Meal</Link></li>
             </ul>            
         </div>
     );
