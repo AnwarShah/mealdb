@@ -5,7 +5,7 @@ const Category = ({categoryData}) => {
     const navigate = useNavigate();
 
     const handleShowMeals = () => {
-        navigate(`meals/${name}`);
+        navigate(`/categories/${name}`);
     }
 
     return (

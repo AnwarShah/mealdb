@@ -13,16 +13,14 @@ const router = createBrowserRouter([
 		element: <App></App>
 	},
 	{
-		path: '/categories',
+		path: 'categories',
 		element: <MealCategories></MealCategories>,
 		loader: () => fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
-		children: [
-			{
-				path: 'meals/:name',
-				element: <Meals></Meals>,
-				loader: ({params}) => fetch(`www.themealdb.com/api/json/v1/1/filter.php?a=${params.name}`)
-			},
-		]
+	},
+	{
+		path: 'categories/:name',
+		element: <Meals></Meals>,
+		loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.name}`)
 	},
 	{
 		path: '/random',
