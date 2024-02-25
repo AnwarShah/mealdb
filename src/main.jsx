@@ -6,11 +6,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MealCategories from './components/MealCategories/MealCategories.jsx'
 import Meals from './components/Meals/Meals.jsx'
 import Meal from './components/Meal/Meal.jsx'
+import ErrorRoute from './components/ErrorRoute/ErrorRoute.jsx'
+import NoCategories from './components/NoCategories/NoCategories.jsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <App></App>
+		element: <App></App>,
+		errorElement: <ErrorRoute></ErrorRoute>,
 	},
 	{
 		path: 'categories',
@@ -20,12 +23,13 @@ const router = createBrowserRouter([
 	{
 		path: 'categories/:name',
 		element: <Meals></Meals>,
+		errorElement: <NoCategories></NoCategories>,
 		loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.name}`)
 	},
 	{
-		path: '/random',
+		path: 'categories/:meal_id',
 		element: <Meal></Meal>,
-		loader: () => fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+		loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i={params.meal_id}`)
 	}
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
